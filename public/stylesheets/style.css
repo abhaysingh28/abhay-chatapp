@@ -181,33 +181,32 @@ input:nth-child(2){
     color: rgb(0, 0, 0);
     text-transform: uppercase;
     word-break: break-all;
-    font-weight: 100;
+    font-weight: 300;
     padding: 5px 5px;
     
 }
 #text {
   margin-top: 2%;
 }
-  #uper input{
-    margin-top: 65%;
-    height: 5vh;
-    width: 60vw;
-    font-size: 6vw;
-
+#uper input{
+  margin-top: 65%;
+  height: 5vh;
+  width: 60vw;
+  font-size: 6vw;
 }
 #botm input{
-  margin-left: 3%;
-  margin-top: 5%;
+  /* margin-left: 3%; */
+  /* margin-top: 5%; */
   height: 5vh;
   width: 70vw;
   font-size: 5vw;
-  padding-left: 15px;
+  /* padding-left: 15px; */
   border-radius: 22px 22px 22px 22px;
 }
 #botm input:nth-child(2){
   height: 5vh;
   width: 20vw;
-  margin-left: 0%;
+  /* margin-left: 0%; */
   border: 2px solid rgb(30, 252, 171);
   background-color: rgb(30, 252, 171);
   color: whitesmoke;
@@ -215,10 +214,18 @@ input:nth-child(2){
   font-family: gilroy;
   font-size: 4vw;
   color: black;
-  margin-left: 1%;
-  padding-right: 70px;
+  /* margin-left: 1%; */
+  /* padding-right: 70px; */
+}
 
-  
+#form{
+  display: flex;
+}
+#botm{
+  height: 9%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #uper input{
   margin-top: 65%;
@@ -255,8 +262,8 @@ input:nth-child(2){
  font-weight: bolder;
 }
 #jhaksa{
-  /* margin-left: 1%; */
-  margin-top: -1%;background-color: transparent;
+  margin-top: 1%;
+  background-color: transparent;
 }
 
 }
