@@ -172,7 +172,7 @@ input:nth-child(2){
   border: 2px solid aquamarine;
 }
 
-@media(max-width: 500px){
+@media(max-width: 1000px){
   #text h4 {
     /* white-space: nowrap; */
     font-size: 3vw;
@@ -242,20 +242,21 @@ input:nth-child(2){
   margin-left: 13%;
   margin-top: 5%;
   font-size: 4vw;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 #online{
  margin-top: 5.3%;
  height: 30px;
  font-size: 4vw;
- margin-left: 12%;
+ margin-left: 8%;
  z-index: 90;
- color: white;
+ color: rgb(0, 0, 0);
  font-family: gilroy;
  font-weight: bolder;
 }
 #jhaksa{
-  margin-left: 1%;
+  /* margin-left: 1%; */
+  margin-top: -1%;background-color: transparent;
 }
 
 }
