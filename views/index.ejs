@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <div id="uper">
+    <form id="fakename" action="">
+      <input type="text" placeholder="UserName">
+      <input type="submit">
+    </form>
+  </div>
+
+
+  <div id="main">
+   
+     <div id="jhaksa">
+      <div id="onli">online:</div>
+      <div id="online"></div>
+
+     </div>
+
+    
+
+    <div id="message">
+
+
+    </div>
+
+    <div id="botm">
+      <form id="form" action="">
+        <input id="input" type="text" placeholder="Message">
+        <input type="submit" placeholder="send me">
+      </form>
+    </div>
+
+  </div>
+
+  
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"
+    integrity="sha512-9mpsATI0KClwt+xVZfbcf2lJ8IFBAwsubJ6mI3rtULwyM3fBmQFzj0It4tGqxLOGQwGfJdk/G+fANnxfq9/cew=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    var socket = io();
+
+    var mess = document.querySelector('#message');
+    var text = document.querySelector('#text');
+    var form = document.querySelector('#form');
+    var input = document.querySelector('#input');
+    var fakename = document.querySelector('#fakename');
+    var uper = document.querySelector('#uper');
+
+
+    fakename.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var userName = document.querySelector("#uper input").value;
+      console.log(userName);
+      uper.style.display = 'none';
+      socket.emit('newUser', userName);
+      socket.on('user-joined', username => {
+        console.log(username)
+        apend(`${username}`, `join the chat`, 'center')
+      })
+    });
+
+    socket.on("gaya-user", gaya =>{
+      apend(`${gaya}`, `leave the chat`, 'center')
+
+    })
+    
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      apend('YOU', input.value, 'right');
+      socket.emit("message", input.value);
+
+      document.querySelector('#input').value = '';
+      console.log(input.value);
+
+
+
+    });
+
+    function apend(name, message, position) {
+      mess.innerHTML += `
+      <div class="${position}" id="text">
+        <h4>${name} : <msg>${message}</msg></h4></div>
+      <br>
+      `;
+      mess.scrollTo(0, mess.scrollHeight);
+
+    }
+    socket.on('alluser', username => {
+      document.querySelector("#online").textContent=username.length
+    })
+
+    socket.on("chat", function (data) {
+      apend(data.name, data.message, 'left');
+     
+    });
+
+
+
+  </script>
+</body>
+
+</html>
