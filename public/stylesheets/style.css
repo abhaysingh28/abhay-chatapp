@@ -167,7 +167,7 @@ input:nth-child(2){
   height: 6vh;
   width: 10vw;
   margin-left: 0%;
-  padding-right: 20px;
+  padding-right: 10px;
   background-color: aquamarine;
   border: 2px solid aquamarine;
 }
@@ -266,6 +266,15 @@ input:nth-child(2){
 #jhaksa{
   margin-top: 1%;
   background-color: transparent;
+}
+input:nth-child(2){
+  z-index: 1;
+  height: 6vh;
+  width: 10vw;
+  margin-left: 0%;
+  padding-right: 10px;
+  background-color: aquamarine;
+  border: 2px solid aquamarine;
 }
 
 }
