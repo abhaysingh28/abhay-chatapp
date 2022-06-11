@@ -177,11 +177,11 @@ input:nth-child(2){
     /* white-space: nowrap; */
     font-size: 3vw;
     margin-top: -0.3%;
-    font-family: 'Roboto', sans-serif;
+    font-family: gilroy;
     color: rgb(0, 0, 0);
     text-transform: uppercase;
     word-break: break-all;
-    font-weight: 900;
+   
     padding: 5px 5px;
     
 }
